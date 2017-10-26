@@ -1,13 +1,20 @@
 package pl.notify.app;
 
+import pl.notify.logger.ConsoleLogger;
+import pl.notify.logger.FileLogger;
+import pl.notify.logger.NotifyLogger;
+import pl.notify.reader.FileNotificationReader;
+import pl.notify.sender.EmailNotificationSender;
+
 import java.io.IOException;
 
-/**
- * Created by slawekludw on 26/10/2017.
- */
+
 public class NotificationApplication {
     public static void main(String[] args) {
-        NotificationFacade app = new NotificationFacade();
+        FileNotificationReader reader = new FileNotificationReader();
+        EmailNotificationSender sender = new EmailNotificationSender();
+        NotifyLogger logger = new FileLogger();
+        NotificationFacade app = new NotificationFacade(reader, sender, logger);
         try {
             app.sendNotifications();
         } catch (IOException e) {

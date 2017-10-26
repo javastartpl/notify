@@ -1,0 +1,1 @@
+Notification{username='jan', email='jan@kowalski.pl', telephone='12345678', content='Cześć mam dla Ciebie super ofertę'}Notification{username='kasia', email='kasia@kowalska.pl', telephone='2343454564', content='Nowa pralka już czeka'}
